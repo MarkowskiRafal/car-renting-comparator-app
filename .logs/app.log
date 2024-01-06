@@ -1,0 +1,9 @@
+2024-sty-06 15:21:23 PM [main] INFO  comparator.configuration.ComparatorApplication - Starting Comparator Application info...
+2024-sty-06 15:21:23 PM [main] WARN  comparator.configuration.ComparatorApplication - Starting Comparator Application warn ...
+2024-sty-06 15:21:23 PM [main] ERROR comparator.configuration.ComparatorApplication - Starting Comparator Application error...
+2024-sty-06 15:21:23 PM [main] INFO  comparator.configuration.ComparatorApplication - Starting ComparatorApplication using Java 17 with PID 12836 (C:\Programowanie\comparator\target\classes started by Rafal in C:\Programowanie\comparator)
+2024-sty-06 15:21:23 PM [main] INFO  comparator.configuration.ComparatorApplication - No active profile set, falling back to 1 default profile: "default"
+2024-sty-06 15:21:24 PM [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-sty-06 15:21:24 PM [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 917 ms
+2024-sty-06 15:21:24 PM [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2024-sty-06 15:21:24 PM [main] INFO  comparator.configuration.ComparatorApplication - Started ComparatorApplication in 1.664 seconds (process running for 2.411)
