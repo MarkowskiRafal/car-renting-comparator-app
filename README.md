@@ -1,3 +1,4 @@
+## Information
 Car Renting Comparator is an application created completely from scratch using tools and practices just as in commercial work. It means that the project has its own board in jira, where tasks are created, which have their statuses, and a backlog, into which ideas
 for the development of the application are dropped. On an ongoing basis, documentation is created for each task in confluence. <br /> <br />
 I develop this application after working hours during my free time for satisfaction and to fulfill my idea for an application into a real project and to practice my developing skills. <br /> <br />
@@ -8,6 +9,7 @@ for log visualization. <br /> <br />
 The development process involves managing separate branches for distinct tasks, which are then merged into the develop branch, where are tested and deployed into main production branch after successful testing. Each functionality has its own junit
 tests and detailed documentation is maintained on Confluence.
 
+## Changelog
 Changelog v0.0.1:
 * Main Spring Boot project has been created
 * Added relevant dependencies
