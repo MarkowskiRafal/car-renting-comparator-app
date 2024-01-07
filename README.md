@@ -10,7 +10,7 @@ The development process involves managing separate branches for distinct tasks, 
 tests and detailed documentation is maintained on Confluence.
 
 ## Changelog
-Changelog v0.0.1:
+v0.0.1:
 * Main Spring Boot project has been created
 * Added relevant dependencies
 * Git has been configured
