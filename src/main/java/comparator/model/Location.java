@@ -4,16 +4,21 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Objects;
 
+@Entity
 @Getter
 @Setter
-@Entity
+@NoArgsConstructor
+@AllArgsConstructor
 public class Location {
 
     @Id
@@ -21,13 +26,11 @@ public class Location {
     private long id;
 
     @Size(min = 2, max = 50, message = "City name should be between 2 and 50 characters")
+    @NotBlank(message = "City name cannot be empty")
     private String city;
 
     @Pattern(regexp = "^\\d{2}-\\d{3}$", message = "Invalid zip code format")
     private String zipCode;
-
-    public Location() {
-    }
 
     @Override
     public boolean equals(Object o) {

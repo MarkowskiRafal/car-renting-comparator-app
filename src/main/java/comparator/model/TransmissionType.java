@@ -1,8 +1,8 @@
 package comparator.model;
 
 public enum TransmissionType {
-    MANUAL("Manualna"),
-    AUTOMATIC("Automatyczna");
+    MANUAL("Manual"),
+    AUTOMATIC("Automatic");
 
     private final String text;
 
