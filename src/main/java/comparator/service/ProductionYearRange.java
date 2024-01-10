@@ -12,5 +12,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = ProductionYearValidator.class)
 public @interface ProductionYearRange {
-    String message() default "";
+    String message() default "Invalid production year";
+    Class<?>[] groups() default {};
+    Class<? extends Payload>[] payload() default {};
 }
