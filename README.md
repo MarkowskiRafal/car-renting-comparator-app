@@ -10,6 +10,13 @@ The development process involves managing separate branches for distinct tasks, 
 tests and detailed documentation is maintained on Confluence.
 
 ## Changelog
+v0.0.2:
+* Main PostgreSQL database has been added and configured
+* Set the database connection variables in classpath as environment variables as a security measure to keep them out of the public
+* Created main model objects 
+* Added validations on fields
+* Added custom production year validation on the field as an interface and implementing service logic so that it only considers data from a specific constant to the current year. This is to make the program work properly and stably without the need for development
+
 v0.0.1:
 * Main Spring Boot project has been created
 * Added relevant dependencies
