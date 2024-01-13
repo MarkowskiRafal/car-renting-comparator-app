@@ -49,7 +49,7 @@ public class ProductionYearValidatorTest {
     @Test
     public void testInvalidProductionYearBelowMinimalValue() {
         // given
-        vehicle.setProductionYear(ProductionYearValidator.MIN_PRODUCTION_YEAR - 1);
+        vehicle.setProductionYear(ProductionYearValidator.minProductionYear - 1);
 
         // when
         boolean isValid = validator.isValid(vehicle.getProductionYear(), mock(ConstraintValidatorContext.class));

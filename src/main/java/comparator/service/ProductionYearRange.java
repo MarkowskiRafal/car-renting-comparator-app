@@ -15,4 +15,6 @@ public @interface ProductionYearRange {
     String message() default "Invalid production year";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
+
+    int minProductionYear() default 1880;
 }

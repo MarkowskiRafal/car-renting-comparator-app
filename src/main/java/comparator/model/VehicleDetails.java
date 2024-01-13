@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.PositiveOrZero;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -46,16 +47,19 @@ public class VehicleDetails {
     private boolean isTheftInsurance;
     private boolean isDamageInsurance;
 
+    @OneToOne(mappedBy = "vehicleDetails")
+    private Vehicle vehicle;
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         VehicleDetails that = (VehicleDetails) o;
-        return getId() == that.getId() && getPassengerCapacity() == that.getPassengerCapacity() && Double.compare(that.getTrunkCapacity(), getTrunkCapacity()) == 0 && getSmallBagsCapacity() == that.getSmallBagsCapacity() && getLargeBagsCapacity() == that.getLargeBagsCapacity() && Double.compare(that.getFuelConsumptionPer100Km(), getFuelConsumptionPer100Km()) == 0 && getFreeCancellationHours() == that.getFreeCancellationHours() && isAirConditioning() == that.isAirConditioning() && isOcInsurance() == that.isOcInsurance() && isTheftInsurance() == that.isTheftInsurance() && isDamageInsurance() == that.isDamageInsurance();
+        return getId() == that.getId() && getPassengerCapacity() == that.getPassengerCapacity() && Double.compare(that.getTrunkCapacity(), getTrunkCapacity()) == 0 && getSmallBagsCapacity() == that.getSmallBagsCapacity() && getLargeBagsCapacity() == that.getLargeBagsCapacity() && Double.compare(that.getFuelConsumptionPer100Km(), getFuelConsumptionPer100Km()) == 0 && getFreeCancellationHours() == that.getFreeCancellationHours() && isAirConditioning() == that.isAirConditioning() && isOcInsurance() == that.isOcInsurance() && isTheftInsurance() == that.isTheftInsurance() && isDamageInsurance() == that.isDamageInsurance() && Objects.equals(getVehicle(), that.getVehicle());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getPassengerCapacity(), getTrunkCapacity(), getSmallBagsCapacity(), getLargeBagsCapacity(), getFuelConsumptionPer100Km(), getFreeCancellationHours(), isAirConditioning(), isOcInsurance(), isTheftInsurance(), isDamageInsurance());
+        return Objects.hash(getId(), getPassengerCapacity(), getTrunkCapacity(), getSmallBagsCapacity(), getLargeBagsCapacity(), getFuelConsumptionPer100Km(), getFreeCancellationHours(), isAirConditioning(), isOcInsurance(), isTheftInsurance(), isDamageInsurance(), getVehicle());
     }
 }

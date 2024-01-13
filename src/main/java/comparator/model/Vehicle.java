@@ -1,12 +1,16 @@
 package comparator.model;
 
 import comparator.service.ProductionYearRange;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.PositiveOrZero;
 import jakarta.validation.constraints.Size;
@@ -36,7 +40,7 @@ public class Vehicle {
     @NotBlank(message = "Model name cannot be empty")
     private String model;
 
-    @ProductionYearRange(message = "Production year should be between 1880 and current year")
+    @ProductionYearRange(message = "Invalid production year, should be between {minProductionYear} and current year")
     private int productionYear;
 
     /* We let rental companies to not specify the horsepower
@@ -55,16 +59,24 @@ public class Vehicle {
     @Enumerated(EnumType.STRING)
     private VehicleType vehicleType;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_vehicle_details", referencedColumnName = "id")
+    private VehicleDetails vehicleDetails;
+
+    @ManyToOne
+    @JoinColumn(name = "id_rental")
+    private Rental rental;
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Vehicle vehicle = (Vehicle) o;
-        return getId() == vehicle.getId() && getProductionYear() == vehicle.getProductionYear() && getHorsepower() == vehicle.getHorsepower() && getDoorsCount() == vehicle.getDoorsCount() && Objects.equals(getBrand(), vehicle.getBrand()) && Objects.equals(getModel(), vehicle.getModel()) && getTransmissionType() == vehicle.getTransmissionType() && getVehicleType() == vehicle.getVehicleType();
+        return getId() == vehicle.getId() && getProductionYear() == vehicle.getProductionYear() && getHorsepower() == vehicle.getHorsepower() && getDoorsCount() == vehicle.getDoorsCount() && Objects.equals(getBrand(), vehicle.getBrand()) && Objects.equals(getModel(), vehicle.getModel()) && getTransmissionType() == vehicle.getTransmissionType() && getVehicleType() == vehicle.getVehicleType() && Objects.equals(getVehicleDetails(), vehicle.getVehicleDetails()) && Objects.equals(getRental(), vehicle.getRental());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getBrand(), getModel(), getProductionYear(), getHorsepower(), getDoorsCount(), getTransmissionType(), getVehicleType());
+        return Objects.hash(getId(), getBrand(), getModel(), getProductionYear(), getHorsepower(), getDoorsCount(), getTransmissionType(), getVehicleType(), getVehicleDetails(), getRental());
     }
 }

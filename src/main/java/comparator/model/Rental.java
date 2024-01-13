@@ -1,9 +1,11 @@
 package comparator.model;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -11,6 +13,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -28,16 +31,22 @@ public class Rental {
     @NotBlank(message = "Rental name cannot me empty")
     private String name;
 
+    @OneToMany(mappedBy = "rental")
+    private List<Vehicle> vehicles;
+
+    @OneToMany(mappedBy = "rental", cascade = CascadeType.ALL)
+    private List<RentalBranch> rentalBranch;
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Rental rental = (Rental) o;
-        return getId() == rental.getId() && Objects.equals(getName(), rental.getName());
+        return getId() == rental.getId() && Objects.equals(getName(), rental.getName()) && Objects.equals(getVehicles(), rental.getVehicles()) && Objects.equals(getRentalBranch(), rental.getRentalBranch());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getName());
+        return Objects.hash(getId(), getName(), getVehicles(), getRentalBranch());
     }
 }

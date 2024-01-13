@@ -8,12 +8,12 @@ import java.time.LocalDate;
 
 @Service
 public class ProductionYearValidator implements ConstraintValidator<ProductionYearRange, Integer> {
-    public static final int MIN_PRODUCTION_YEAR = 1880;
     public static final int CURRENT_YEAR = LocalDate.now().getYear();
+    public static int minProductionYear;
 
     @Override
     public void initialize(ProductionYearRange constraintAnnotation) {
-        ConstraintValidator.super.initialize(constraintAnnotation);
+        minProductionYear = constraintAnnotation.minProductionYear();
     }
 
     @Override
@@ -21,6 +21,6 @@ public class ProductionYearValidator implements ConstraintValidator<ProductionYe
         if (productionYear == null) {
             return false;
         }
-        return (productionYear > MIN_PRODUCTION_YEAR) && (productionYear <= CURRENT_YEAR);
+        return (productionYear > minProductionYear) && (productionYear <= CURRENT_YEAR);
     }
 }

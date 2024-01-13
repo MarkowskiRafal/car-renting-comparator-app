@@ -16,6 +16,7 @@ v0.0.2:
 * Created main model objects 
 * Added validations on fields
 * Added custom production year validation on the field as an interface and implementing service logic so that it only considers data from a specific constant to the current year. This is to make the program work properly and stably without the need for development
+* Added JUnit tests for custom production year validation
 
 v0.0.1:
 * Main Spring Boot project has been created
