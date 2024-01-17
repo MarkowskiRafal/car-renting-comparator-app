@@ -35,18 +35,18 @@ public class Rental {
     private List<Vehicle> vehicles;
 
     @OneToMany(mappedBy = "rental", cascade = CascadeType.ALL)
-    private List<RentalBranch> rentalBranch;
+    private List<RentalBranch> rentalBranches;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Rental rental = (Rental) o;
-        return getId() == rental.getId() && Objects.equals(getName(), rental.getName()) && Objects.equals(getVehicles(), rental.getVehicles()) && Objects.equals(getRentalBranch(), rental.getRentalBranch());
+        return getId() == rental.getId() && Objects.equals(getName(), rental.getName()) && Objects.equals(getVehicles(), rental.getVehicles()) && Objects.equals(getRentalBranches(), rental.getRentalBranches());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getName(), getVehicles(), getRentalBranch());
+        return Objects.hash(getId(), getName(), getVehicles(), getRentalBranches());
     }
 }
