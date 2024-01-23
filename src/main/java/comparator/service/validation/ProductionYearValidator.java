@@ -1,5 +1,6 @@
-package comparator.service;
+package comparator.service.validation;
 
+import comparator.service.validation.ProductionYearRange;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import org.springframework.stereotype.Service;

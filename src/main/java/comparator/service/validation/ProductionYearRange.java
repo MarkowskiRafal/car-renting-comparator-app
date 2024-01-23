@@ -1,4 +1,4 @@
-package comparator.service;
+package comparator.service.validation;
 
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;

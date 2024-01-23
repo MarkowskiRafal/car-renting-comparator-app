@@ -1,6 +1,8 @@
 package comparator.service;
 
 import comparator.model.Vehicle;
+import comparator.service.validation.ProductionYearRange;
+import comparator.service.validation.ProductionYearValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

@@ -1,6 +1,6 @@
 package comparator.model;
 
-import comparator.service.ProductionYearRange;
+import comparator.service.validation.ProductionYearRange;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
