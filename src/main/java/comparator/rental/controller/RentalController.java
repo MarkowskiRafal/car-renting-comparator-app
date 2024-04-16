@@ -1,7 +1,7 @@
-package comparator.controller;
+package comparator.rental.controller;
 
-import comparator.model.Rental;
-import comparator.service.rental.RentalService;
+import comparator.rental.controller.dto.RentalDto;
+import comparator.rental.service.RentalService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,8 +23,8 @@ public class RentalController {
     }
 
     @GetMapping(ROOT)
-    public ResponseEntity<List<Rental>> getRentals() {
-        final List<Rental> rentals = rentalService.getAllRentals();
+    public ResponseEntity<List<RentalDto>> getRentals() {
+        final List<RentalDto> rentals = rentalService.getAllRentals();
         return new ResponseEntity<>(rentals, HttpStatus.OK);
     }
 }

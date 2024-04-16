@@ -1,6 +1,6 @@
 package comparator.service;
 
-import comparator.model.Vehicle;
+import comparator.vehicle.model.Vehicle;
 import comparator.service.validation.ProductionYearRange;
 import comparator.service.validation.ProductionYearValidator;
 import jakarta.validation.ConstraintValidatorContext;

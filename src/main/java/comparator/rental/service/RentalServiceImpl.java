@@ -1,8 +1,8 @@
-package comparator.service.rental;
+package comparator.rental.service;
 
 import comparator.exception.ResourceNotFoundException;
-import comparator.model.Rental;
-import comparator.repository.RentalRepository;
+import comparator.rental.controller.dto.RentalDto;
+import comparator.rental.repository.RentalRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,15 +19,13 @@ public class RentalServiceImpl implements RentalService {
     }
 
     @Override
-    public List<Rental> getAllRentals() {
+    public List<RentalDto> getAllRentals() {
         return rentalRepository.findAll();
     }
 
     @Override
-    public Rental getRentalById(long id) throws ResourceNotFoundException {
+    public RentalDto getRentalById(long id) throws ResourceNotFoundException {
         return rentalRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Rental by given id was not found"));
     }
-
-
 }

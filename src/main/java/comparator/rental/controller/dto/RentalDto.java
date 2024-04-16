@@ -1,7 +1,7 @@
-package comparator.dto;
+package comparator.rental.controller.dto;
 
-import comparator.model.RentalBranch;
-import comparator.model.Vehicle;
+import comparator.rental.branch.model.RentalBranch;
+import comparator.vehicle.model.Vehicle;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,7 +11,6 @@ import java.util.List;
 @Setter
 public class RentalDto {
 
-    private long id;
     private String name;
     private List<Vehicle> vehicles;
     private List<RentalBranch> rentalBranches;

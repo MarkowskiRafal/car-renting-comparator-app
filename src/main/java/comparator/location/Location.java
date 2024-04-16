@@ -1,4 +1,4 @@
-package comparator.model;
+package comparator.location;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

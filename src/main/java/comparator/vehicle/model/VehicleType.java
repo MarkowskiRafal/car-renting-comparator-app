@@ -1,4 +1,4 @@
-package comparator.model;
+package comparator.vehicle.model;
 
 public enum VehicleType {
     SEDAN("Sedan"),

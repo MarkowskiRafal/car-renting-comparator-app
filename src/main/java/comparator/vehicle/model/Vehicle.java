@@ -1,5 +1,6 @@
-package comparator.model;
+package comparator.vehicle.model;
 
+import comparator.rental.model.Rental;
 import comparator.service.validation.ProductionYearRange;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;

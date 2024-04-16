@@ -1,5 +1,7 @@
-package comparator.model;
+package comparator.rental.branch.model;
 
+import comparator.location.Location;
+import comparator.rental.model.Rental;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

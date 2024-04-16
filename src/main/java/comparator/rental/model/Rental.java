@@ -1,5 +1,7 @@
-package comparator.model;
+package comparator.rental.model;
 
+import comparator.rental.branch.model.RentalBranch;
+import comparator.vehicle.model.Vehicle;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
